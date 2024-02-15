@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    --fw-oufit-light: 400;
+    --fw-outfit-medium: 600;
+    --fw-outfit-bold: 700;
+    --ff-outfit: "Outfit";
+    --ff-yserif: "Young Serif";
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-rosewhite: hsl(330, 100%, 98%);
+    --clr-eggshell: hsl(30, 54%, 90%);
+    --clr-lightgrey: hsl(30, 18%, 87%);
+    --clr-wenge-brown: hsl(30, 10%, 34%);
+    --clr-dark-charcoal: hsl(24, 5%, 18%);
+    --clr-nutmeg: hsl(14, 45%, 36%);
+    --clr-dark-raspberry: hsl(332, 51%, 32%);
+}
+
+body {
+    display: flex;
+    background-color: var(--clr-eggshell);
+    min-height: 100vh;
+    margin: auto;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--clr-white);
+    margin-block: 50px;
+    max-width: 800px;
+    border: none;
+    border-radius: 20px;
+}
+
+hr {
+    margin-block: 5px;
+    margin-inline: 50px;
+    border: 0.1px solid;
+    color: var(--clr-lightgrey);
+}
+
+.header-image {
+    margin-inline: 50px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.header-image img {
+    max-width: 100%;
+    margin: auto;
+    object-fit: contain;
+    border: none;
+    border-radius: 20px;
+}
+
+.recipe-intro {
+    text-align: left;
+    margin-inline: 50px;
+    padding-bottom: 40px;
+}
+
+.recipe-intro h1 {
+    font-family: var(--ff-yserif);
+    font-size: 2.75rem;
+    font-weight: 100;
+    color: var(--clr-dark-charcoal);
+    padding-bottom: 20px;
+
+}
+
+.recipe-intro p, .nutrition p {
+    font-family: var(--ff-outfit);
+    font-size: 1.1rem;
+    font-weight: var(--fw-outfit-thin);
+    color: var(--clr-wenge-brown);
+}
+
+.prep-time {
+    background-color: var(--clr-rosewhite);
+    border-radius: 20px;
+    border: none;
+    margin-inline: 50px;
+    margin-bottom: 15px;
+    padding-inline: 30px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    text-align: left;
+}
+
+.prep-time h1 {
+    font-family: var(--ff-outfit);
+    font-weight: var(--fw-outfit-bold);
+    color: var(--clr-dark-raspberry);
+    margin-left: 5px;
+    padding-bottom: 5px;
+}
+
+.prep-time ul {
+    margin-left: 5px;
+    font-family: var(--ff-outfit);
+    font-weight: var(--fw-outfit-light);
+    color: var(--clr-wenge-brown);
+    list-style-position: inside;
+    display: table;
+    padding-bottom: 10px;
+}
+
+.prep-time ul li {
+    list-style: none;
+    display: table-row;
+}
+
+.prep-time span {
+    font-weight: var(--fw-outfit-bold);
+
+}
+
+.prep-time ul li::before {
+    content: "\2022";
+    color: var(--clr-dark-raspberry);
+    font-weight: var(--fw-outfit-bold);
+    display: inline-block;
+    width: 2em;
+    display: table-cell;
+    padding-top: 15px;
+}
+
+.ingredients, .instructions, .nutrition {
+    align-items: left;
+    margin-inline: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.ingredients h1, .instructions h1, .nutrition h1 {
+    font-family: var(--ff-yserif);
+    color: var(--clr-nutmeg);
+    margin-left: 0px;
+    padding-bottom: 20px;
+}
+
+.instructions h1, .ingredients h1{
+    padding-bottom: 0px;
+}
+
+.ingredients ul {
+    margin-left: 0px;
+    font-size: 1.1rem;
+    font-family: var(--ff-outfit);
+    font-weight: var(--fw-outfit-light);
+    color: var(--clr-wenge-brown);
+    list-style-position: inside;
+    display: table;
+    padding-bottom: 20px;
+}
+
+.ingredients ul li {
+    list-style: none;
+    display: table-row;
+}
+
+.ingredients ul li::before {
+    content: "\25AA";
+    color: var(--clr-nutmeg);
+    font-weight: var(--fw-outfit-bold);
+    display: inline-block;
+    width: 2em;
+    display: table-cell;
+    padding-top: 15px;
+}
+
+.instructions ol {
+    font-size: 1.1rem;
+    font-family: var(--ff-outfit);
+    font-weight: var(--fw-outfit-light);
+    color: var(--clr-wenge-brown);
+    display: table;
+    padding-bottom: 20px;
+}
+
+.instructions ol li {
+    list-style: none;
+    counter-increment: li;
+    list-style-position: outside;
+    display: table-row;
+}
+
+.instructions ol li span{
+    font-weight: var(--fw-outfit-bold);
+}
+
+.instructions ol li:before {
+    content: counter(li) ".";
+    color: var(--clr-nutmeg);
+    font-weight: var(--fw-outfit-bold);
+    display: table-cell;
+    width: 2em;
+    padding-top: 20px;
+}
+
+.nutrition-table {
+    display: flex;
+    flex-direction: column;
+    margin-block: 30px;
+    font-family: var(--ff-outfit);
+}
+
+.row {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr;
+    margin-block: 10px;
+    margin-left: 30px;
+}
+
+.item {
+    font-weight: var(--fw-oufit-light);
+}
+
+.value {
+    font-weight: var(--fw-outfit-bold);
+    color: var(--clr-nutmeg);
+}
+
+.nutrition-table hr {
+    margin-inline: 0px;
+}
+
+
+@media (max-width: 688px) {
+    main {
+        border-radius: 0px;
+        margin: auto;
+    }
+
+    .header-image {
+        margin-inline: auto;
+        margin-bottom: 30px;
+        margin-top: 0px;
+    }
+    
+    .header-image img {
+        max-width: 100vw;
+        margin: auto;
+        object-fit: contain;
+        border: none;
+        border-radius: 0px;
+    }
+
+    .recipe-intro h1 {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+
+    .recipe-intro p, .nutrition p, .ingredients ul, .instructions ol  {
+        font-size: 0.9rem;
+    }
+}
